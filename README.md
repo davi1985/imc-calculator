@@ -14,6 +14,11 @@
 
 IMC Calculator
 
+## Screenshot
+
+<img src='./src/assets/screen-2.png'/>
+<img src='./src/assets/screen-1.png'/>
+
 ## :rocket: Technologies
 
 The following tools were used in this project:
