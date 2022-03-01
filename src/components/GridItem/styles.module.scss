@@ -1,0 +1,49 @@
+.main {
+  flex: 1;
+  color: #fff;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: filter 0.3s;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+    margin-top: 0.7rem;
+  }
+
+  p.yourImc {
+    font-size: 1.1rem;
+    margin: 1rem 0 3rem;
+  }
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  img {
+    width: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem 0;
+  }
+}
