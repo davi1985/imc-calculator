@@ -1,45 +1,28 @@
 import { useState } from 'react';
 
+import { Header } from './components/Header';
+import { LeftSide } from './components/LeftSide';
+import { RightSide } from './components/RightSide';
+
+import { useToast } from './hooks/useToast';
 import { calculateIMC, IMCLevel, levels } from './utils/imc';
 
-import { Header } from './components/Header';
-import { RightSide } from './components/RightSide';
-import { LeftSide } from './components/LeftSide';
-
 import styles from './App.module.scss';
-import { toast, ToastContainer } from 'react-toastify';
 
 export const App = () => {
   const [heightField, setHeightField] = useState<number>(0);
   const [weightField, setWeightField] = useState<number>(0);
   const [showItem, setShowItem] = useState<IMCLevel | null>(null);
 
-  type CustomNotifyProps = {
-    message: string;
-    type: 'success' | 'error';
-  };
-
-  const notify = ({ message, type }: CustomNotifyProps) =>
-    toast.info(message, {
-      closeButton: true,
-      theme: 'colored',
-      type: type,
-      autoClose: 3000,
-      position: 'top-center',
-      hideProgressBar: false,
-      closeOnClick: true,
-      rtl: false,
-      pauseOnFocusLoss: true,
-      draggable: true,
-      pauseOnHover: true,
-    });
+  const { notify, ToastContainer } = useToast();
 
   const handleCalculateIMC = () => {
     if (!heightField || !weightField) {
-      notify({ message: 'Preencha todos os campos.', type: 'error' });
+      return notify({ message: 'Preencha todos os campos.', type: 'error' });
     }
 
     setShowItem(calculateIMC(heightField, weightField));
+
     notify({ message: 'IMC Calculado.', type: 'success' });
   };
 
