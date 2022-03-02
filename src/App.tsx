@@ -1,16 +1,14 @@
-import { useContext, useState } from 'react';
-
 import { Header } from './components/Header';
 import { LeftSide } from './components/LeftSide';
 import { RightSide } from './components/RightSide';
 
 import { ToastContainer } from 'react-toastify';
 
-import { levels } from './utils/imc';
+import { levels } from './utils/imc-levels';
+
+import { useIMC } from './hooks/useIMC';
 
 import styles from './App.module.scss';
-import { IMCContext } from './context/IMCProvider';
-import { useIMC } from './hooks/useIMC';
 
 export const App = () => {
   const {
