@@ -10,49 +10,6 @@
   gap: 1rem;
 }
 
-.rightBig {
-  flex: 1;
-  display: flex;
-}
-
-.rightArrow {
-  border: 0;
-  position: absolute;
-  background: #227c9d;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
-  margin-top: 160px;
-  margin-left: -2.18rem;
-  z-index: 10;
-
-  transition: filter 0.3s;
-
-  &:hover {
-    filter: brightness(0.9);
-  }
-
-  img {
-    width: 25px;
-  }
-}
-
-@media (max-width: 768px) {
-  .rightArrow {
-    margin-left: 0;
-    margin-top: 0;
-    border-radius: 0.8rem 0 0.8rem;
-    width: 50px;
-    height: 50px;
-  }
-}
-
 @media (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;

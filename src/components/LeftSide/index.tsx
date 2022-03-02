@@ -1,41 +1,42 @@
-import { LeftSideProps } from './types';
-
 import styles from './styles.module.scss';
+import { useIMC } from '../../hooks/useIMC';
+import { Input } from '../Input';
+import { Button } from '../Button';
 
-export const LeftSide = ({
-  showItem,
-  heightField,
-  weightField,
-  setHeightField,
-  setWeightField,
-  calculateIMC,
-}: LeftSideProps) => (
-  <div className={styles.leftside}>
-    <h1>Calcule o seu IMC</h1>
+export const LeftSide = () => {
+  const {
+    showItem,
+    heightField,
+    weightField,
+    setHeightField,
+    setWeightField,
+    handleCalculateIMC,
+  } = useIMC();
 
-    <p>
-      IMC é a sigla para o Índice de Massa Corpórea, parâmetro adotoado pela
-      Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.
-    </p>
+  return (
+    <div className={styles.leftside}>
+      <h1>Calcule o seu IMC</h1>
 
-    <input
-      disabled={!!showItem}
-      type="number"
-      value={heightField > 0 ? heightField : ''}
-      placeholder="Digite a sua altura. Ex: 1.5 (em metros)"
-      onChange={(e) => setHeightField(parseFloat(e.target.value))}
-    />
+      <p>
+        IMC é a sigla para o Índice de Massa Corpórea, parâmetro adotoado pela
+        Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.
+      </p>
 
-    <input
-      disabled={!!showItem}
-      type="number"
-      value={weightField > 0 ? weightField : ''}
-      placeholder="Digite o seu peso. Ex: 75.3 (em kg)"
-      onChange={(e) => setWeightField(parseFloat(e.target.value))}
-    />
+      <Input
+        showItem={showItem}
+        setValue={setHeightField}
+        value={heightField}
+        placeholder="Digite a sua altura. Ex: 1.5 (em metros)"
+      />
 
-    <button onClick={calculateIMC} disabled={!!showItem}>
-      Calcular
-    </button>
-  </div>
-);
+      <Input
+        showItem={showItem}
+        setValue={setWeightField}
+        value={weightField}
+        placeholder="Digite o seu peso. Ex: 75.3 (em kg)"
+      />
+
+      <Button />
+    </div>
+  );
+};

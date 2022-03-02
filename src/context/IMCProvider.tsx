@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useState } from 'react';
 import { useCustomToast } from '../hooks/useCustomToast';
-import { calculateIMC, IMCLevel } from '../utils/imc';
+import { calculateIMC } from '../utils/imc';
+import { IMCLevel } from '../utils/imc-levels';
 import { IMCContextData } from './types';
 
 export const IMCContext = createContext({} as IMCContextData);
@@ -36,7 +37,6 @@ export const IMCProvider = ({ children }: { children: ReactNode }) => {
         setHeightField,
         setWeightField,
         showItem,
-        setShowItem,
         handleCalculateIMC,
         handleBack,
       }}

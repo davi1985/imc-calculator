@@ -17,7 +17,6 @@ export const App = () => {
     weightField,
     setWeightField,
     showItem,
-    setShowItem,
     handleCalculateIMC,
     handleBack,
   } = useIMC();
@@ -29,16 +28,9 @@ export const App = () => {
       <Header />
 
       <div className={styles.container}>
-        <LeftSide
-          calculateIMC={handleCalculateIMC}
-          heightField={heightField}
-          weightField={weightField}
-          setHeightField={setHeightField}
-          setWeightField={setWeightField}
-          showItem={showItem}
-        />
+        <LeftSide />
 
-        <RightSide back={handleBack} levels={levels} showItem={showItem} />
+        <RightSide levels={levels} />
       </div>
     </div>
   );

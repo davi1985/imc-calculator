@@ -1,28 +1,25 @@
 import { GridItem } from '../GridItem';
 import { RightSideProps } from './types';
 
-import arrowBackImg from '../../assets/leftarrow.png';
+import { IMCResult } from '../IMCResult';
+import { useIMC } from '../../hooks/useIMC';
 
 import styles from './styles.module.scss';
 
-export const RightSide = ({ levels, back, showItem }: RightSideProps) => (
-  <div className={styles.rightside}>
-    {!showItem && (
-      <div className={styles.grid}>
-        {levels.map((item, key) => (
-          <GridItem key={key} item={item} />
-        ))}
-      </div>
-    )}
+export const RightSide = ({ levels }: RightSideProps) => {
+  const { showItem } = useIMC();
 
-    {showItem && (
-      <div className={styles.rightBig}>
-        <button className={styles.rightArrow} onClick={back}>
-          <img src={arrowBackImg} />
-        </button>
+  return (
+    <div className={styles.rightside}>
+      {!showItem && (
+        <div className={styles.grid}>
+          {levels.map((item, key) => (
+            <GridItem key={key} item={item} />
+          ))}
+        </div>
+      )}
 
-        <GridItem item={showItem} />
-      </div>
-    )}
-  </div>
-);
+      <IMCResult />
+    </div>
+  );
+};

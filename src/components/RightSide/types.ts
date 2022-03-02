@@ -1,7 +1,5 @@
-import { IMCLevel } from '../../utils/imc';
+import { IMCLevel } from '../../utils/imc-levels';
 
 export type RightSideProps = {
   levels: IMCLevel[];
-  back: () => void;
-  showItem: IMCLevel | null;
 };
