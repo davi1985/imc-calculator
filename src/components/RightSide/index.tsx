@@ -5,7 +5,7 @@ import arrowBackImg from '../../assets/leftarrow.png';
 
 import styles from './styles.module.scss';
 
-export const RightSide = ({ levels, handleBack, showItem }: RightSideProps) => {
+export const RightSide = ({ levels, back, showItem }: RightSideProps) => {
   return (
     <div className={styles.rightside}>
       {!showItem && (
@@ -18,7 +18,7 @@ export const RightSide = ({ levels, handleBack, showItem }: RightSideProps) => {
 
       {showItem && (
         <div className={styles.rightBig}>
-          <button className={styles.rightArrow} onClick={handleBack}>
+          <button className={styles.rightArrow} onClick={back}>
             <img src={arrowBackImg} />
           </button>
 

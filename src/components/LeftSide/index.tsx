@@ -8,7 +8,7 @@ export const LeftSide = ({
   weightField,
   setHeightField,
   setWeightField,
-  handleCalculateIMC,
+  calculateIMC,
 }: LeftSideProps) => {
   return (
     <div className={styles.leftside}>
@@ -35,7 +35,7 @@ export const LeftSide = ({
         onChange={(e) => setWeightField(parseFloat(e.target.value))}
       />
 
-      <button onClick={handleCalculateIMC} disabled={!!showItem}>
+      <button onClick={calculateIMC} disabled={!!showItem}>
         Calcular
       </button>
     </div>

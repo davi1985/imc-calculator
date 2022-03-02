@@ -1,4 +1,3 @@
-import { ToastContainer } from 'react-toastify';
 import { toast } from 'react-toastify';
 
 type CustomNotifyProps = {
@@ -6,7 +5,7 @@ type CustomNotifyProps = {
   type: 'success' | 'error';
 };
 
-export const useToast = () => {
+export const useCustomToast = () => {
   const notify = ({ message, type }: CustomNotifyProps) =>
     toast.info(message, {
       closeButton: true,
@@ -22,5 +21,5 @@ export const useToast = () => {
       pauseOnHover: true,
     });
 
-  return { notify, ToastContainer };
+  return { notify };
 };

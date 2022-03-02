@@ -1,4 +1,4 @@
-import { IMCLevel } from '../../helpers/imc';
+import { IMCLevel } from '../../utils/imc';
 
 export type LeftSideProps = {
   showItem: IMCLevel | null;
@@ -6,5 +6,5 @@ export type LeftSideProps = {
   weightField: number;
   setHeightField: (value: number) => void;
   setWeightField: (value: number) => void;
-  handleCalculateIMC: () => void;
+  calculateIMC: () => void;
 };

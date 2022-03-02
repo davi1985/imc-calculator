@@ -5,9 +5,13 @@ import { App } from './App';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+import { IMCProvider } from './context/IMCProvider';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <IMCProvider>
+      <App />
+    </IMCProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
