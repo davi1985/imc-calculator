@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import { App } from './App';
 
-const darkTheme = {
-  background: '#736b5e',
-  text: '#e8e6e3',
-};
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.render(
   <React.StrictMode>
