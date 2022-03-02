@@ -1,4 +1,4 @@
-import { IMCLevel } from '../../utils/imc';
+import { IMCLevel } from '../../utils/imc-levels';
 
 export type GridItemProps = {
   item: IMCLevel;
